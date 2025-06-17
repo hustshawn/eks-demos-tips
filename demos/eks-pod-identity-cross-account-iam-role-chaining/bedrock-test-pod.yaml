@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bedrock-test-pod
+  namespace: bedrock-app
+spec:
+  serviceAccountName: bedrock-service-account
+  containers:
+  - name: aws-cli
+    image: amazon/aws-cli:latest
+    command:
+      - "sleep"
+      - "3600"
+    env:
+    - name: AWS_DEFAULT_REGION
+      value: "us-east-1"  # Region where Bedrock is available
+  restartPolicy: Never
