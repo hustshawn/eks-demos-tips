@@ -31,12 +31,19 @@ This guide demonstrates how to set up cross-account access to Amazon Bedrock usi
 
 ## Usage
 
-1. Run the setup script to create the Pod Identity association:
+1. Set up the IAM roles in both accounts:
    ```bash
+   # Edit the script first to update account IDs
+   ./iam-role-setup.sh
+   ```
+
+2. Run the setup script to create the Pod Identity association:
+   ```bash
+   # Edit the script first to update account IDs and cluster name
    ./create-pod-identity-association.sh
    ```
 
-2. Test Bedrock access from a pod:
+3. Test Bedrock access from a pod:
    ```bash
    ./test-bedrock-access.sh
    ```
